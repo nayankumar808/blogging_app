@@ -18,7 +18,6 @@ export const useBlog = ({id}:{id:string} )=> {
     axios.get(`${BACKEND_URL}/api/v1/blog/${id}`, {
       headers: { Authorization : localStorage.getItem("token") },
     }).then((response)=>{
-      console.log(response)
         setLoading(false);
         setBlog(response.data.post);
     })
