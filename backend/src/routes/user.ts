@@ -69,7 +69,7 @@ userRouter.post("/signin", async (c) => {
       return c.json({ error: "ivalid Credentials" });
     }
     const token = await sign({ id: user.id }, c.env.JWT_SECRET);
-    return c.json({ jwt: token });
+    return c.text(token)
   } catch {
     c.status(403);
     return c.json({ error: "ivalid Credentials" });
