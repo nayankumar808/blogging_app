@@ -5,13 +5,14 @@ import { useBlog } from "../hooks/fetchBlogs";
 import { useParams } from "react-router-dom";
 
 // atomFamilies/selectorFamilies
+
 export const Blog = () => {
   const { id } = useParams();
-  const { loading, blog } = useBlog({
+  const { Loading, blog } = useBlog({
     id: id || "",
   });
 
-  if (loading || !blog) {
+  if (Loading || !blog) {
     return (
       <div>
         <Appbar />
