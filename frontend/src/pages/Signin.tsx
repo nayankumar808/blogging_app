@@ -3,15 +3,13 @@ import { Quote } from "../components/Quote";
 
 export const Signin = () => {
   return (
-    <>
-      <div className="grid grid-cols-2 lg:grid-cols-2">
-        <div>
-          <Auth type="signin"/>
-        </div>
-        <div className="invisible md:visible ">
-          <Quote />
-        </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen">
+      <div>
+        <Auth type="signin" />
       </div>
-    </>
+      <div className="hidden md:block">
+        <Quote />
+      </div>
+    </div>
   );
 };
